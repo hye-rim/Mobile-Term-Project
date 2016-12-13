@@ -1,8 +1,8 @@
 # Mobile Programming Term Project 2016-2
 
 #
->Android
+- Android
 
 #
-> Hye-rim
-> noayoung
+- Hye-rim
+- noayoung
