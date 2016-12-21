@@ -12,21 +12,4 @@
             android:title="@string/bookmark" />
     </group>
 
-    <item android:title="Today">
-        <menu>
-            <item
-                android:id="@+id/nav_today"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-        </menu>
-    </item>
-    <item android:title="Month">
-        <menu>
-            <item
-                android:id="@+id/nav_month"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-        </menu>
-    </item>
-
 </menu>

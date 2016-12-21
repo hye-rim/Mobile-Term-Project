@@ -1,135 +1,233 @@
 package com.mobile.hyerim.mobiletermproject.Activity.Main;
 
-import android.content.res.Resources;
-import android.graphics.Rect;
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
+import com.mobile.hyerim.mobiletermproject.Activity.Menu.BookmarkActivity;
+import com.mobile.hyerim.mobiletermproject.Activity.Menu.CalenderActivity;
+import com.mobile.hyerim.mobiletermproject.Activity.ProductList.ProductListActivity;
 import com.mobile.hyerim.mobiletermproject.R;
 
-import java.util.ArrayList;
-import java.util.List;
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+    final static String TAG = "MainAcitivity";
+    private Intent intent;
 
-public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private BrandAdapter brandAdapter;
-    private List<Brand> brandList;
+    public final int MY_PERMISSIONS_REQUEST_READ_CALENDER = 1;
+    public final int MY_PERMISSIONS_REQUEST_WRITE_CALENDER = 2;
+    public final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 3;
+
+    private GridView gridView;
+    private String[] gridViewStringKo = {
+            "스타벅스", "엔제리너스", "요거프레소",
+            "이디야", "카페베네", "커피빈",
+            "탐앤탐스", "파스쿠찌", "투썸플레이스"
+    };
+
+    private String[] gridViewStringEng = {
+            "Starbucks", "Angelinus", "Yogerpresso",
+            "Ediya", "Caffebene", "CoffeBean",
+            "Tomntoms", "Pascucci", "A Twosome Place"
+    };
+    private int[] gridViewImageId= {
+            R.drawable.starbucks_logo, R.drawable.angelinus_logo, R.drawable.yogerpresso_logo,
+            R.drawable.ediya_logo, R.drawable.caffebene_logo, R.drawable.coffeebean_logo,
+            R.drawable.tomntoms_logo, R.drawable.pascucci_logo, R.drawable.twosomeplace_logo
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        permissionCheck();
         initView();
+        setGridView();
 
-        setRecycler();
     }
 
-    private void setRecycler() {
-        brandList = new ArrayList<>();
-        brandAdapter = new BrandAdapter(this,brandList);
-
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this,2); //2열
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(brandAdapter);
-
-        prepareBrand();
+    //그리드뷰 데이터 설정
+    private void setGridView() {
+        BrandAdapter brandAdapter = new BrandAdapter(MainActivity.this, gridViewStringKo, gridViewStringEng, gridViewImageId);
+        gridView.setAdapter(brandAdapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                intent = new Intent(getApplicationContext(), ProductListActivity.class); //캘린더화면으로 이동
+                intent.putExtra("brand",gridViewStringEng[position]);
+                Log.d(TAG,"item selected : "+gridViewStringEng[position]);
+                startActivity(intent);
+            }
+        });
     }
 
-    private void prepareBrand() {
-        int[] brands = new int[]{
-                R.drawable.starbucks_logo,
-                R.drawable.caffebene_logo,
-                R.drawable.coffeebean_logo,
-                R.drawable.starbucks_logo,
-                R.drawable.caffebene_logo,
-                R.drawable.coffeebean_logo,
-                R.drawable.starbucks_logo,
-                R.drawable.caffebene_logo,
-                R.drawable.coffeebean_logo
-        };
+    private void permissionCheck() {
 
-        Brand b= new Brand("Starbucks", "스타벅스", brands[0]);
-        brandList.add(b);
+        if((ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.READ_CALENDAR) != PackageManager.PERMISSION_GRANTED)
+                || (ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.WRITE_CALENDAR) != PackageManager.PERMISSION_GRANTED)
+                || (ContextCompat.checkSelfPermission(MainActivity.this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)) {
 
-        b= new Brand("Caffebene", "카페베네", brands[1]);
-        brandList.add(b);
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
+                    Manifest.permission.READ_CALENDAR)) {
 
-        b= new Brand("Coffebean", "커피빈", brands[2]);
-        brandList.add(b);
+                // Show an expanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
 
-        b= new Brand("Angelinus", "엔제리너스", brands[3]);
-        brandList.add(b);
+            }else{
 
-        b= new Brand("Yogerpresso", "요거프레소", brands[4]);
-        brandList.add(b);
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(MainActivity.this,
+                        new String[]{Manifest.permission.READ_CALENDAR},
+                        MY_PERMISSIONS_REQUEST_READ_CALENDER);
 
-        b= new Brand("Ediya", "이디야", brands[5]);
-        brandList.add(b);
+            }
+            if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
+                    Manifest.permission.WRITE_CALENDAR)){
 
-        b= new Brand("Tomntoms", "탐앤탐스", brands[6]);
-        brandList.add(b);
+            }else {
 
-        b= new Brand("TwosomePlace", "투썸플레이스", brands[7]);
-        brandList.add(b);
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(MainActivity.this,
+                        new String[]{Manifest.permission.WRITE_CALENDAR},
+                        MY_PERMISSIONS_REQUEST_WRITE_CALENDER);
+            }
+            if(ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE)){
 
-        b= new Brand("Pascucci", "파스쿠찌", brands[8]);
-        brandList.add(b);
+            }else {
 
-        brandAdapter.notifyDataSetChanged();
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(MainActivity.this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                        MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
+            }
+        } else {
+            // READ_EXTERNAL_STORAGE 권한이 있는 것이므로
+            // Public Directory에 접근할 수 있고 거기에 있는 파일을 읽을 수 있다
+
+        }
+
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_READ_CALENDER: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // READ_EXTERNAL_STORAGE 권한을 얻었으므로
+                    // 관련 작업을 수행할 수 있다
+
+                } else {
+
+                    // 권한을 얻지 못 하였으므로 파일 읽기를 할 수 없다
+                    // 적절히 대처한다
+
+                }
+                return;
+            }
+            case MY_PERMISSIONS_REQUEST_WRITE_CALENDER: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // READ_EXTERNAL_STORAGE 권한을 얻었으므로
+                    // 관련 작업을 수행할 수 있다
+
+                } else {
+
+                    // 권한을 얻지 못 하였으므로 파일 읽기를 할 수 없다
+                    // 적절히 대처한다
+
+                }
+                return;
+            }
+            case MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // READ_EXTERNAL_STORAGE 권한을 얻었으므로
+                    // 관련 작업을 수행할 수 있다
+
+                } else {
+
+                    // 권한을 얻지 못 하였으므로 파일 읽기를 할 수 없다
+                    // 적절히 대처한다
+
+                }
+                return;
+            }
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
+
 
     private void initView() {
-        recyclerView = (RecyclerView)findViewById(R.id.main_recycler_view);
+        //Navigation Drawer Activity 생성 시 만들어지는 코드
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //gridView 뷰 설정
+        gridView = (GridView) findViewById(R.id.main_grid_view);
     }
 
-    //RecyclerView item decoration - give equal margin around grid item
-    //http://www.androidhive.info/2016/05/android-working-with-card-view-and-recycler-view/
-    public class GridSpacingItemDecoration extends RecyclerView.ItemDecoration{
-        private int spanCount;
-        private int spacing;
-        private boolean includeEdge;
-
-        public GridSpacingItemDecoration(int spanCount, int spacing, boolean includeEdge) {
-            this.spanCount = spanCount;
-            this.spacing = spacing;
-            this.includeEdge = includeEdge;
-        }
-
-        @Override
-        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-            int position = parent.getChildAdapterPosition(view); // item position
-            int column = position % spanCount; // item column
-
-            if (includeEdge) {
-                outRect.left = spacing - column * spacing / spanCount; // spacing - column * ((1f / spanCount) * spacing)
-                outRect.right = (column + 1) * spacing / spanCount; // (column + 1) * ((1f / spanCount) * spacing)
-
-                if (position < spanCount) { // top edge
-                    outRect.top = spacing;
-                }
-                outRect.bottom = spacing; // item bottom
-            } else {
-                outRect.left = column * spacing / spanCount; // column * ((1f / spanCount) * spacing)
-                outRect.right = spacing - (column + 1) * spacing / spanCount; // spacing - (column + 1) * ((1f /    spanCount) * spacing)
-                if (position >= spanCount) {
-                    outRect.top = spacing; // item top
-                }
-            }
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
         }
     }
 
-    //Converting dp to pixel
-    private int dpToPx(int dp) {
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
-    }
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
+        if (id == R.id.nav_calender) {
+            intent = new Intent(this, CalenderActivity.class); //캘린더화면으로 이동
+            startActivity(intent);
+        } else if (id == R.id.nav_bookmark) {
+            intent = new Intent(this, BookmarkActivity.class); //즐겨찾기화면으로 이동
+            startActivity(intent);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

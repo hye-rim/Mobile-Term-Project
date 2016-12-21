@@ -1,4 +1,4 @@
-package com.mobile.hyerim.mobiletermproject.Activity.Main;
+package com.mobile.hyerim.mobiletermproject.Data;
 
 /**
  * Created by HYERIM on 2016-12-13.

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/corner_shape"
+    android:backgroundTint="@color/colorWhite"
+    android:padding="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/brand_image"
+        android:layout_width="@dimen/brand_cover_width"
+        android:layout_height="@dimen/brand_cover_height"
+        android:scaleType="fitXY"
+        android:layout_margin="@dimen/brand_cover_margin"/>
+
+    <TextView
+        android:id="@+id/brand_name_ko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/brand_title_ko"
+        android:textColor="@color/brand_title_ko"
+        android:padding="@dimen/brand_title_ko_padding"/>
+
+    <TextView
+        android:id="@+id/brand_name_eng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/brand_title"
+        android:paddingBottom ="@dimen/brand_title_padding_bottom"/>
+
+</LinearLayout>

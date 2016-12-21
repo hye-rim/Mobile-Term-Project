@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_marginBottom="@dimen/recycler_view_item_margin_bottom"
+    android:background="@drawable/corner_border"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+    <ImageView
+        android:id = "@+id/product_list_image"
+        android:src="@drawable/starbucks_white_chocolate_mocha"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/textview_title_padding"
+        android:layout_width="150dp"
+        android:layout_height="60dp">
+        <TextView
+            android:id = "@+id/product_list_tv_brand"
+            android:textSize="11dp"
+            android:text="스타벅스"
+            android:textColor="@color/textSecondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id = "@+id/product_list_tv_item"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/textPrimary"
+            android:text="화이트 초콜릿 모카"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View style="@style/Divider"
+        android:layout_marginTop="@dimen/textview_title_padding"
+        android:layout_marginBottom="@dimen/textview_title_padding"
+
+        android:layout_width="3dp"/>
+
+    <RelativeLayout
+        android:gravity="left"
+        android:padding="@dimen/textview_title_padding"
+        android:layout_width="95dp"
+        android:layout_height="60dp">
+        <ImageView
+            android:id="@+id/product_list_image_item_won"
+            android:src="@drawable/ic_won"
+            android:layout_width="18dp"
+            android:layout_marginTop="1dp"
+            android:layout_height="15dp" />
+        <TextView
+            android:layout_marginLeft="@dimen/textview_title_padding"
+            android:id = "@+id/product_list_tv_price"
+            android:layout_toRightOf="@+id/product_list_image_item_won"
+            android:text="5100원"
+            android:textColor="@color/textSecondary"
+            android:textSize="13dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="false" />
+        <ImageView
+            android:layout_below="@+id/product_list_image_item_won"
+            android:id="@+id/product_list_image_item_kcal"
+            android:src="@drawable/ic_calorei"
+            android:layout_width="18dp"
+            android:paddingTop="5dp"
+            android:layout_height="20dp" />
+        <TextView
+            android:id="@+id/product_list_tv_calorie"
+            android:layout_marginLeft="@dimen/textview_title_padding"
+            android:text="260kcal"
+            android:textColor="@color/textSecondary"
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_below="@+id/product_list_tv_price"
+            android:layout_toRightOf="@+id/product_list_image_item_kcal" />
+    </RelativeLayout>
+</LinearLayout>
