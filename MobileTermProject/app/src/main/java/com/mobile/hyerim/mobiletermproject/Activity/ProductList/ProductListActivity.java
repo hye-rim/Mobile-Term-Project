@@ -156,19 +156,67 @@ public class ProductListActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        boolean returnValue = super.onOptionsItemSelected(item);
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Collections.sort(productList, new Comparator<Product>(){
-                public int compare(Product obj1, Product obj2){ //가격 높은순
-                    return  (obj1.getPrice() > obj2.getPrice()) ? -1: (obj1.getPrice() > obj2.getPrice()) ? 1: 0;
-                }
-            });
-            mAdapter.notifyDataSetChanged();
-            return true;
+        switch (id){
+            case R.id.action_name_high:
+                Collections.sort(productList, new Comparator<Product>(){
+                    public int compare(Product obj1, Product obj2){ //이름차순
+                        return  obj1.getName().compareTo(obj2.getName());
+                    }
+                });
+                mAdapter.notifyDataSetChanged();
+                returnValue = true;
+                break;
+            case R.id.action_name_low:
+                Collections.sort(productList, new Comparator<Product>(){
+                    public int compare(Product obj1, Product obj2){ //이름차순 - 가나다역순
+                        return  obj2.getName().compareTo(obj1.getName());
+                    }
+                });
+                mAdapter.notifyDataSetChanged();
+                returnValue = true;
+                break;
+            case R.id.action_price_high:
+                Collections.sort(productList, new Comparator<Product>(){
+                    public int compare(Product obj1, Product obj2){ //가격 높은순 - 내림차순
+                        return  (obj1.getPrice() > obj2.getPrice()) ? -1: (obj1.getPrice() > obj2.getPrice()) ? 1: 0;
+                    }
+                });
+                mAdapter.notifyDataSetChanged();
+                returnValue = true;
+                break;
+            case R.id.action_price_low:
+                Collections.sort(productList, new Comparator<Product>(){
+                    public int compare(Product obj1, Product obj2){ //가격 낮은순 - 오름차순
+                        return  (obj1.getPrice() < obj2.getPrice()) ? -1: (obj1.getPrice() > obj2.getPrice()) ? 1: 0;
+                    }
+                });
+                mAdapter.notifyDataSetChanged();
+                returnValue = true;
+                break;
+            case R.id.action_calorie_high:
+                Collections.sort(productList, new Comparator<Product>(){
+                    public int compare(Product obj1, Product obj2){ //칼로리 높은순 - 내림차순
+                        return  (obj1.getCalorie() > obj2.getCalorie()) ? -1: (obj1.getCalorie() > obj2.getCalorie()) ? 1: 0;
+                    }
+                });
+                mAdapter.notifyDataSetChanged();
+                returnValue = true;
+                break;
+            case R.id.action_calorie_low:
+                Collections.sort(productList, new Comparator<Product>(){
+                    public int compare(Product obj1, Product obj2){ //칼로리 높은순 - 내림차순
+                        return  (obj1.getCalorie() < obj2.getCalorie()) ? -1: (obj1.getCalorie() > obj2.getCalorie()) ? 1: 0;
+                    }
+                });
+                mAdapter.notifyDataSetChanged();
+                returnValue = true;
+                break;
         }
 
-        return super.onOptionsItemSelected(item);
+        return returnValue;
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
