@@ -12,7 +12,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -71,7 +70,6 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 intent = new Intent(getApplicationContext(), ProductListActivity.class); //캘린더화면으로 이동
                 intent.putExtra("brand",gridViewStringEng[position]);
-                Log.d(TAG,"item selected : "+gridViewStringEng[position]);
                 startActivity(intent);
             }
         });

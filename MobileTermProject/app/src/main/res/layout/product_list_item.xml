@@ -9,7 +9,7 @@
     android:layout_height="80dp">
     <ImageView
         android:id = "@+id/product_list_image"
-        android:src="@drawable/starbucks_white_chocolate_mocha"
+        android:src="@drawable/ic_image"
         android:layout_width="50dp"
         android:layout_height="50dp" />
 

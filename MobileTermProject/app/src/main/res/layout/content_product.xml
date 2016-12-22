@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_product_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_vertical_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryLight"
+    tools:context="com.mobile.hyerim.mobiletermproject.Activity.Product.ProductActivity"
+    tools:showIn="@layout/app_bar_product">
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id = "@+id/bookmark_item_image"
+            android:background="@drawable/corner_shape"
+            android:backgroundTint="@color/colorWhite"
+            android:padding="20dp"
+            android:src="@drawable/ic_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/textview_title_padding"
+            android:layout_width="150dp"
+            android:layout_height="100dp">
+            <TextView
+                android:id = "@+id/text_menu_tv_brand"
+                android:textSize="15dp"
+                android:text="엔제리너스"
+                android:textColor="@color/textSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id = "@+id/text_menu_tv_item"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/textPrimary"
+                android:text="아이스티"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/text_menu_vertical_margin"
+        android:layout_marginBottom="@dimen/text_menu_vertical_margin"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:layout_height="30dp">
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_menu_title_size"
+            android:text="사이즈"
+            android:layout_weight="0.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_menu_title_size"
+            android:text="칼로리"
+            android:layout_weight="0.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_menu_title_size"
+            android:text="가격"
+            android:layout_weight="0.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_menu_title_size"
+            android:text="기록하기"
+            android:layout_weight="0.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/text_menu_vertical_margin"
+        android:layout_marginBottom="@dimen/text_menu_vertical_margin"
+        android:background="@drawable/corner_shape"
+        android:backgroundTint="@color/colorWhite"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:weightSum="1"
+        android:layout_height="30dp">
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_menu_title_size"
+            android:text="    null    "
+            android:layout_weight="0.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.25"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_calorei"
+                android:layout_width="18dp"
+                android:layout_height="15dp" />
+            <TextView
+                android:id = "@+id/product_tv_kcal"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/text_menu_title_size"
+                android:text="130kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"  />
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="0.25"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/ic_won"
+                android:layout_width="18dp"
+                android:layout_height="15dp" />
+            <TextView
+                android:id = "@+id/product_tv_price"
+                android:textColor="@color/textPrimary"
+                android:textSize="@dimen/text_menu_title_size"
+                android:text="3800원"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"  />
+        </LinearLayout>
+
+        <TextView
+            android:gravity="center"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/text_menu_title_size"
+            android:text="      +      "
+            android:layout_weight="0.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

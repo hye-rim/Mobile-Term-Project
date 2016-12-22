@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item android:title="ㄱㄴㄷ순">
         <menu>
             <item
                 android:id="@+id/action_name_high"
-                android:orderInCategory="100"
                 android:title="ㄱㄴㄷ순 ↑"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_name_low"
-                android:orderInCategory="100"
                 android:title="ㄱㄴㄷ순 ↓"
                 app:showAsAction="never" />
         </menu>
@@ -19,12 +18,10 @@
         <menu>
             <item
                 android:id="@+id/action_price_low"
-                android:orderInCategory="100"
                 android:title="가격순 ↑"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_price_high"
-                android:orderInCategory="100"
                 android:title="가격순 ↓"
                 app:showAsAction="never" />
         </menu>
@@ -34,12 +31,10 @@
         <menu>
             <item
                 android:id="@+id/action_calorie_low"
-                android:orderInCategory="100"
                 android:title="칼로리순 ↑"
                 app:showAsAction="never" />
             <item
                 android:id="@+id/action_calorie_high"
-                android:orderInCategory="100"
                 android:title="칼로리순 ↓"
                 app:showAsAction="never" />
         </menu>

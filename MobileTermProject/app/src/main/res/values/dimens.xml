@@ -41,7 +41,12 @@
     <dimen name="nav_icon_size">20dp</dimen>
     <dimen name="nav_text_size">12dp</dimen>
     <dimen name="nav_margin_top">20dp</dimen>
+    <dimen name="nav_footer_margin_top">230dp</dimen>
 
     <!--recycler view item-->
     <dimen name="recycler_view_item_margin_bottom">10dp</dimen>
+
+    <!--product activity-->
+    <dimen name="text_menu_title_size">14dp</dimen>
+    <dimen name="text_menu_vertical_margin">10dp</dimen>
 </resources>

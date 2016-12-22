@@ -1,10 +1,12 @@
 package com.mobile.hyerim.mobiletermproject.Data;
 
+import java.io.Serializable;
+
 /**
  * Created by HYERIM on 2016-12-21.
  */
 
-public class Product {
+public class Product implements Serializable {
     private String brand;
     private String name;
     private int price;

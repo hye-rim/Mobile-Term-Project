@@ -14,5 +14,6 @@
     <string name="title_activity_product_list">ProductListActivity</string>
     <string name="title_activity_calender">CalenderActivity</string>
     <string name="title_activity_bookmark">BookmarkActivity</string>
+    <string name="title_activity_product">ProductActivity</string>
 
 </resources>

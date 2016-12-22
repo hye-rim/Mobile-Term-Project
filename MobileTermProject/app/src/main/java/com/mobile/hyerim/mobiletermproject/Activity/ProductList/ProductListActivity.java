@@ -2,8 +2,10 @@ package com.mobile.hyerim.mobiletermproject.Activity.ProductList;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,14 +14,14 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.mobile.hyerim.mobiletermproject.Activity.Menu.BookmarkActivity;
 import com.mobile.hyerim.mobiletermproject.Activity.Menu.CalenderActivity;
+import com.mobile.hyerim.mobiletermproject.Activity.Product.ProductActivity;
 import com.mobile.hyerim.mobiletermproject.ClickListener;
 import com.mobile.hyerim.mobiletermproject.Data.Product;
 import com.mobile.hyerim.mobiletermproject.R;
@@ -58,6 +60,8 @@ public class ProductListActivity extends AppCompatActivity
     private void initView() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(),R.drawable.ic_filter);
+        toolbar.setOverflowIcon(drawable);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -75,13 +79,11 @@ public class ProductListActivity extends AppCompatActivity
         brand = getIntent().getStringExtra("brand");
         fileName = brand + ".txt";
         productList = new ArrayList<Product>();
-        Log.d(TAG,fileName);
         BufferedReader reader = null;
 
         try {
             AssetManager assetManager = getAssets();
             String[] files = assetManager.list("");
-            Log.d(TAG, files[0]);
             InputStream input = assetManager.open(fileName);
 
             reader = new BufferedReader(
@@ -96,7 +98,6 @@ public class ProductListActivity extends AppCompatActivity
                         Integer.parseInt(inputData[2])) );
             }
         } catch (IOException e) {
-            Log.d(TAG,"IOException");
             //log the exception
         } finally {
             if (reader != null) {
@@ -109,7 +110,15 @@ public class ProductListActivity extends AppCompatActivity
         }
 
     }
-
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if ((keyCode == KeyEvent.KEYCODE_BACK))
+        {
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
+    }
     private void initRecyclerView() {
         mAdapter = new ProductListAdapter(productList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -123,7 +132,9 @@ public class ProductListActivity extends AppCompatActivity
             @Override
             public void onClick(View view, int position) {
                 Product product = productList.get(position);
-                Toast.makeText(getApplicationContext(), product.getName() + " is selected!", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getApplicationContext(), ProductActivity.class); //상품화면으로 이동
+                intent.putExtra("item", product);
+                startActivity(intent);
             }
 
             @Override
