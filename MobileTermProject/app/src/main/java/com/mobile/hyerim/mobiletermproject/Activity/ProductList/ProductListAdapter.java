@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mobile.hyerim.mobiletermproject.Data.Product;
@@ -20,6 +21,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView brand, name,  price, calorie;
+        public ImageView image;
 
         public MyViewHolder(View view) {
             super(view);
@@ -27,6 +29,7 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             name = (TextView) view.findViewById(R.id.product_list_tv_item);
             price = (TextView) view.findViewById(R.id.product_list_tv_price);
             calorie = (TextView) view.findViewById(R.id.product_list_tv_calorie);
+            image = (ImageView)view.findViewById(R.id.product_list_image);
         }
     }
 
