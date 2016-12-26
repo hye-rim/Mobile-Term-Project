@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_calender"
+            android:icon="@drawable/ic_menu_calender_record"
+            android:title="@string/calender_record" />
+        <item
+            android:id="@+id/nav_bookmark"
+            android:icon="@drawable/ic_menu_bookmark"
+            android:title="@string/bookmark" />
+    </group>
+
+</menu>
