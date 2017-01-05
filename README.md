@@ -10,6 +10,6 @@
 ## Image
 <img src="https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/main.png" width="160"> <img src="https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/list_sort.png" width="160"> <img src="https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/favorites.png" width="160"> <img src="https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/navigation drawer.png" width="160">
 
-##
-- Hye-rim
-- noayoung
+## Contributors
+@hye-rim
+@noayoung
