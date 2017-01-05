@@ -8,7 +8,7 @@
 
 
 ##
-![image 1](https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/main.png) ![image 2](https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/list_sort.png) ![image 3](https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/navigation drawer.png) ![image 4](https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/favorites.png)
+<img src="https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/main.png" width="120"> ![image 2](https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/list_sort.png) ![image 3](https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/navigation drawer.png) ![image 4](https://github.com/hye-rim/Images/blob/master/mobile_term_project-2016-2/favorites.png)
 
 ## 
 - Hye-rim
