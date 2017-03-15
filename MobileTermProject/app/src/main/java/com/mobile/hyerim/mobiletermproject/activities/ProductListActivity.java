@@ -1,4 +1,10 @@
-package com.mobile.hyerim.mobiletermproject.Activity.ProductList;
+package com.mobile.hyerim.mobiletermproject.activities;
+
+import com.mobile.hyerim.mobiletermproject.listeners.ClickListener;
+import com.mobile.hyerim.mobiletermproject.models.Product;
+import com.mobile.hyerim.mobiletermproject.R;
+import com.mobile.hyerim.mobiletermproject.listeners.RecyclerTouchListener;
+import com.mobile.hyerim.mobiletermproject.adapters.ProductListAdapter;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -18,14 +24,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
-import com.mobile.hyerim.mobiletermproject.Activity.Menu.BookmarkActivity;
-import com.mobile.hyerim.mobiletermproject.Activity.Menu.CalenderActivity;
-import com.mobile.hyerim.mobiletermproject.Activity.Product.ProductActivity;
-import com.mobile.hyerim.mobiletermproject.ClickListener;
-import com.mobile.hyerim.mobiletermproject.Data.Product;
-import com.mobile.hyerim.mobiletermproject.R;
-import com.mobile.hyerim.mobiletermproject.RecyclerTouchListener;
 
 import java.io.BufferedReader;
 import java.io.IOException;

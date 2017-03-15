@@ -12,7 +12,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical"
     android:background="@color/colorPrimaryLight"
-    tools:context="com.mobile.hyerim.mobiletermproject.Activity.ProductList.ProductListActivity"
+    tools:context="com.mobile.hyerim.mobiletermproject.activities.ProductListActivity"
     tools:showIn="@layout/app_bar_product_list">
 
     <android.support.v7.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.mobile.hyerim.mobiletermproject.Activity.Menu;
+package com.mobile.hyerim.mobiletermproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +11,12 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 
-import com.mobile.hyerim.mobiletermproject.Activity.Product.ProductActivity;
-import com.mobile.hyerim.mobiletermproject.ClickListener;
-import com.mobile.hyerim.mobiletermproject.Data.BookmarkDBHelper;
-import com.mobile.hyerim.mobiletermproject.Data.Product;
+import com.mobile.hyerim.mobiletermproject.adapters.BookmarkAdapter;
+import com.mobile.hyerim.mobiletermproject.listeners.ClickListener;
+import com.mobile.hyerim.mobiletermproject.controllers.BookmarkDBHelper;
+import com.mobile.hyerim.mobiletermproject.models.Product;
 import com.mobile.hyerim.mobiletermproject.R;
-import com.mobile.hyerim.mobiletermproject.RecyclerTouchListener;
+import com.mobile.hyerim.mobiletermproject.listeners.RecyclerTouchListener;
 
 import java.util.ArrayList;
 import java.util.List;

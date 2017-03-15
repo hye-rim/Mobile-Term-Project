@@ -1,4 +1,6 @@
-package com.mobile.hyerim.mobiletermproject.Data;
+package com.mobile.hyerim.mobiletermproject.controllers;
+
+import com.mobile.hyerim.mobiletermproject.models.Product;
 
 import android.content.Context;
 import android.database.Cursor;

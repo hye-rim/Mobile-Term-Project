@@ -1,4 +1,4 @@
-package com.mobile.hyerim.mobiletermproject.Activity.Main;
+package com.mobile.hyerim.mobiletermproject.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

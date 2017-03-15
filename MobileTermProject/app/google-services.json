@@ -1,0 +1,187 @@
+{
+  "project_info": {
+    "project_number": "236780532362",
+    "firebase_url": "https://practice-b97b2.firebaseio.com",
+    "project_id": "practice-b97b2",
+    "storage_bucket": "practice-b97b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236780532362:android:b5d75907de594a2d",
+        "android_client_info": {
+          "package_name": "com.google.firebase.codelab.friendlychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236780532362-814nhohg4b9juno7r9s0htjlfem3sv4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.google.firebase.codelab.friendlychat",
+            "certificate_hash": "b4cbba9910cf846098587d1dad4670e36c20c906"
+          }
+        },
+        {
+          "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxoVRhuBwVccI3mGyDbYRqwJ8V3ZA8wWA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236780532362:android:5b7c0507d36a6753",
+        "android_client_info": {
+          "package_name": "com.example.hye_rim.lecturebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236780532362-lapb32qvhjb4nchk1cjsvgsdo3ia6t9d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hye_rim.lecturebook",
+            "certificate_hash": "b4cbba9910cf846098587d1dad4670e36c20c906"
+          }
+        },
+        {
+          "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxoVRhuBwVccI3mGyDbYRqwJ8V3ZA8wWA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236780532362:android:5e64448438de9827",
+        "android_client_info": {
+          "package_name": "com.bcsdlab.kapproject.callvansharing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236780532362-t8kh9jrgivam9eqn27gc7rdugantgqh3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bcsdlab.kapproject.callvansharing",
+            "certificate_hash": "b4cbba9910cf846098587d1dad4670e36c20c906"
+          }
+        },
+        {
+          "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxoVRhuBwVccI3mGyDbYRqwJ8V3ZA8wWA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236780532362:android:caa411ba669df918",
+        "android_client_info": {
+          "package_name": "com.mobile.hyerim.mobiletermproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236780532362-5fapjfv2nd22vqsf70rvq32fsrs1i1ds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobile.hyerim.mobiletermproject",
+            "certificate_hash": "b4cbba9910cf846098587d1dad4670e36c20c906"
+          }
+        },
+        {
+          "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxoVRhuBwVccI3mGyDbYRqwJ8V3ZA8wWA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236780532362-9ijmcpolofdljl8b5ir9c1vb1onsqa34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

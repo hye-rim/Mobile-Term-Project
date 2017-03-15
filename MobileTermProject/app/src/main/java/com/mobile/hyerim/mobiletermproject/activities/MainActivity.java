@@ -1,4 +1,4 @@
-package com.mobile.hyerim.mobiletermproject.Activity.Main;
+package com.mobile.hyerim.mobiletermproject.activities;
 
 import android.Manifest;
 import android.content.Intent;
@@ -17,9 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.mobile.hyerim.mobiletermproject.Activity.Menu.BookmarkActivity;
-import com.mobile.hyerim.mobiletermproject.Activity.Menu.CalenderActivity;
-import com.mobile.hyerim.mobiletermproject.Activity.ProductList.ProductListActivity;
+import com.mobile.hyerim.mobiletermproject.adapters.BrandAdapter;
 import com.mobile.hyerim.mobiletermproject.R;
 
 public class MainActivity extends AppCompatActivity

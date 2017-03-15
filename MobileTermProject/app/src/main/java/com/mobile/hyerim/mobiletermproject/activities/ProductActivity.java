@@ -1,4 +1,4 @@
-package com.mobile.hyerim.mobiletermproject.Activity.Product;
+package com.mobile.hyerim.mobiletermproject.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -13,8 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.mobile.hyerim.mobiletermproject.Data.BookmarkDBHelper;
-import com.mobile.hyerim.mobiletermproject.Data.Product;
+import com.mobile.hyerim.mobiletermproject.controllers.BookmarkDBHelper;
+import com.mobile.hyerim.mobiletermproject.models.Product;
 import com.mobile.hyerim.mobiletermproject.R;
 
 public class ProductActivity extends AppCompatActivity

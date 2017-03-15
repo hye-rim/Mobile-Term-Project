@@ -1,12 +1,11 @@
-package com.mobile.hyerim.mobiletermproject.Activity;
+package com.mobile.hyerim.mobiletermproject.activities;
+
+import com.mobile.hyerim.mobiletermproject.R;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-
-import com.mobile.hyerim.mobiletermproject.Activity.Main.MainActivity;
-import com.mobile.hyerim.mobiletermproject.R;
 
 public class SplashActivity extends AppCompatActivity {
 
